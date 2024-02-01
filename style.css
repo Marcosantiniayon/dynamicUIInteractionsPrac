@@ -1,14 +1,33 @@
-html,
-body {
-    min-height: 100vh;
-    margin: 0;
-    color: aliceblue;
+* {
+    box-sizing: border-box;
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
 body {
+    /* height: 100%; */
+    min-height: 100vh;
+    /* Use viewport height to ensure minimum size covers the entire viewport */
     display: flex;
     flex-direction: column;
+    color: aliceblue;
+    background-color: blueviolet;
 }
+
+/* body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+    color: aliceblue;
+    background-color: blueviolet;
+} */
 .active{
     background-color:rgb(104, 104, 104);
 }
@@ -27,9 +46,9 @@ body {
 }
 
 .dropdown{
-    width: 15em;
+    /* width: 15em;
     position: relative;
-    grid-column: 2em;
+    grid-column: 2em; */
 }
 
 /* .dropdown:hover{
@@ -40,22 +59,17 @@ body {
 
 footer {
     padding: 5px;
-    flex-grow: 0;
     flex-shrink: 0;
     bottom: 0;
     width: 100%;
-    text-align: center;
     background-color: rgb(50, 44, 61);
+    text-align: center;
 }
 
 .main {
+    /* width: 100%; */
     padding: 20px;
-    background-color: blueviolet;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    align-items: center;
+    flex: 1;
 }
 
 .menu{
@@ -89,15 +103,13 @@ footer {
     display: block;
 }
 
-nav{
+header{
+    width: 100%;
     padding: 20px;
     background-color: rgb(44, 34, 63);
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-.nav-left{
-    min-width: 160px
 }
 
 .select {
@@ -107,4 +119,8 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@media only screen and (max-width: 600px) {
+    
 }
