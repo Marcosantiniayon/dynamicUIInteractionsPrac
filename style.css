@@ -9,6 +9,9 @@ body {
     display: flex;
     flex-direction: column;
 }
+.active{
+    background-color:rgb(104, 104, 104);
+}
 
 .caret{
     width: 0;
@@ -19,17 +22,21 @@ body {
         transition: 0.3s;
 }
 
+.caret-rotate{
+    transform: rotate(180deg);
+}
+
 .dropdown{
     width: 15em;
     position: relative;
     grid-column: 2em;
 }
 
-.dropdown:hover{
+/* .dropdown:hover{
     background-color: rgb(70, 137, 115);
     color: aliceblue;
     cursor: pointer;
-}
+} */
 
 footer {
     padding: 5px;
@@ -58,13 +65,28 @@ footer {
     padding: 0px;
     margin-top: 10px;
     z-index: 1;
+    display: none;
+    box-shadow: 0 .3em 1em rgba(0, 0, 0, .5)
 }
+.menu > :first-child {
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+}
+.menu> :last-child {
+    border-bottom-left-radius: .5em;
+    border-bottom-right-radius: .5em;
+}
+
 .menu li{
     padding: .5em;
     /* border-radius: .5em; */
 }
 .menu li:hover{
-    background-color: blue;
+    background-color: rgb(70, 137, 115);
+}
+
+.menu-open{
+    display: block;
 }
 
 nav{
