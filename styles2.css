@@ -53,16 +53,35 @@ header{
             z-index: 1;
             width: inherit;
             margin-top: .5em;
-            padding: .5em;
+            padding: 0;
             border-radius: .5em;
             background-color: rgb(208, 220, 255);
             color: blueviolet;;
-
             list-style: none;
         }
         .menu-open{
             display: block;
         }
+        .menu li {
+            padding: .2em;
+            /* border-radius: .5em; */
+        }
+        .menu li:hover {
+            background-color: rgb(116, 155, 255);
+        }
+        .menu> :first-child {
+            border-top-left-radius: .5em;
+            border-top-right-radius: .5em;
+        }
+
+        .menu> :last-child {
+            border-bottom-left-radius: .5em;
+            border-bottom-right-radius: .5em;
+        }
+        .active {
+            background-color: rgb(165, 190, 255);
+        }
+
 
 .main {
     padding: 24px;
