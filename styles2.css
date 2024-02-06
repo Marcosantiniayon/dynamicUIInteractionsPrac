@@ -11,6 +11,7 @@ body {
     flex-direction: column;
     color: aliceblue;
     background-color: blueviolet;
+    background-image: linear-gradient(to bottom, blueviolet,blueviolet,rgb(192, 169, 251),rgb(208, 220, 255), rgb(208, 220, 255), rgb(208, 220, 255), rgb(208, 220, 255),rgb(208, 220, 255), rgb(208, 220, 255));
 }
 
 header{
@@ -18,7 +19,7 @@ header{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(103, 59, 144);
+    background-color: blueviolet;
 }
 
     .dropdown{
@@ -28,7 +29,8 @@ header{
         .select {
             padding: .5em;
             border-radius: .5em;
-            background-color: rgb(50, 50, 50);
+            background-color: rgb(208, 220, 255);
+            color: blueviolet;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -36,9 +38,10 @@ header{
             .caret {
                 width: 0;
                 height: 0;
+                color: blueviolet;
                 border-left: 5px solid transparent;
                 border-right: 5px solid transparent;
-                border-top: 5px solid #fff;
+                border-top: 5px solid blueviolet;;
                 transition: 0.3s;
             }
             .caret-rotate {
@@ -52,7 +55,8 @@ header{
             margin-top: .5em;
             padding: .5em;
             border-radius: .5em;
-            background-color: rgb(50, 50, 50);
+            background-color: rgb(208, 220, 255);
+            color: blueviolet;;
 
             list-style: none;
         }
@@ -69,6 +73,6 @@ footer {
     padding: 5px;
     bottom: 0;
     flex-shrink: 0;
-    background-color: rgb(151, 108, 226);
+    background-color: rgb(193, 168, 236);
     text-align: center;
 }
