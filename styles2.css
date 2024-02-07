@@ -14,12 +14,23 @@ body {
     background-image: linear-gradient(to bottom, blueviolet,blueviolet,rgb(192, 169, 251),rgb(208, 220, 255), rgb(208, 220, 255), rgb(208, 220, 255), rgb(208, 220, 255),rgb(208, 220, 255), rgb(208, 220, 255));
 }
 
+.overlay{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 10;
+}
 header{
     padding: 0 24px 0 24px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: blueviolet;
+    z-index: 11;
 }
 
     .dropdown{
@@ -62,12 +73,15 @@ header{
         .menu-open{
             display: block;
         }
-        .menu li {
+        li {
             padding: .2em;
             /* border-radius: .5em; */
         }
         .menu li:hover {
-            background-color: rgb(116, 155, 255);
+            background-color: rgb(172, 172, 172);
+        }
+        .menu2 li:hover {
+            color: rgb(190, 190, 190);
         }
         .menu> :first-child {
             border-top-left-radius: .5em;
@@ -78,10 +92,34 @@ header{
             border-bottom-left-radius: .5em;
             border-bottom-right-radius: .5em;
         }
-        .active {
-            background-color: rgb(165, 190, 255);
+        .menu .active {
+            background-color: rgb(178, 155, 252);
         }
-    .burger-bar{display: none;}
+        .menu2 .active {
+            color: rgb(215, 173, 255);
+        }
+    .openMenu2{
+        display: none;
+        width: 6vw;
+    }
+    .closeMenu2{
+        display: none;
+        width: 5vw;
+    }
+    .menu2{
+        display: block;
+        width: 100%;
+        top: 80px;
+        left: 0;
+        margin: 0;
+        padding: 0;
+        z-index: 11;
+        list-style: none;
+    }
+    .menu2 li{
+        padding: 2em;
+        text-align: center;
+    }
 
 .main {
     padding: 24px;
@@ -97,11 +135,32 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+    h1 {
+        font-size: 6vw;
+        width: 330px;
+        white-space: nowrap;
+    }
+    
     .select{
         display: none;
     }
-    .burger-bar{
-        display: inline-block;
+
+    .closeMenu2 {
+        display: none;
     }
 
+    .openMenu2 {
+        display: block;
+        width: 6vw;
+    }
+
+    .menu{
+        /* display: none; */
+    }
+
+}
+@media only screen and (min-width: 601px) {
+    .openMenu2, .closeMenu2 {
+        display: none !important;
+    }
 }
