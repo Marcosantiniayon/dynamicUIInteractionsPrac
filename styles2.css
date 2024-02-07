@@ -31,94 +31,97 @@ header{
     justify-content: space-between;
     background-color: blueviolet;
     z-index: 11;
+    height:79.88px;
 }
 
-    .dropdown{
-        width: 10em;
+.dropdown{
+    width: 10em;
 
+}
+.select {
+    padding: .5em;
+    border-radius: .5em;
+    background-color: rgb(208, 220, 255);
+    color: blueviolet;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.caret {
+    width: 0;
+    height: 0;
+    color: blueviolet;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid blueviolet;;
+    transition: 0.3s;
+}
+    .caret-rotate {
+        transform: rotate(180deg);
     }
-        .select {
-            padding: .5em;
-            border-radius: .5em;
-            background-color: rgb(208, 220, 255);
-            color: blueviolet;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-            .caret {
-                width: 0;
-                height: 0;
-                color: blueviolet;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-top: 5px solid blueviolet;;
-                transition: 0.3s;
-            }
-            .caret-rotate {
-                transform: rotate(180deg);
-            }
-        .menu {
-            display: none;
-            position: absolute;
-            z-index: 1;
-            width: inherit;
-            margin-top: .5em;
-            padding: 0;
-            border-radius: .5em;
-            background-color: rgb(208, 220, 255);
-            color: blueviolet;;
-            list-style: none;
-        }
-        .menu-open{
-            display: block;
-        }
-        li {
-            padding: .2em;
-            /* border-radius: .5em; */
-        }
-        .menu li:hover {
-            background-color: rgb(172, 172, 172);
-        }
-        .menu2 li:hover {
-            color: rgb(190, 190, 190);
-        }
-        .menu> :first-child {
-            border-top-left-radius: .5em;
-            border-top-right-radius: .5em;
-        }
-
-        .menu> :last-child {
-            border-bottom-left-radius: .5em;
-            border-bottom-right-radius: .5em;
-        }
-        .menu .active {
-            background-color: rgb(178, 155, 252);
-        }
-        .menu2 .active {
-            color: rgb(215, 173, 255);
-        }
-    .openMenu2{
-        display: none;
-        width: 6vw;
-    }
-    .closeMenu2{
-        display: none;
-        width: 5vw;
-    }
-    .menu2{
+.menu {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    width: inherit;
+    margin-top: .5em;
+    padding: 0;
+    list-style: none;
+}
+    .menu-open{
         display: block;
-        width: 100%;
-        top: 80px;
-        left: 0;
-        margin: 0;
-        padding: 0;
-        z-index: 11;
-        list-style: none;
+    }
+li {
+    padding: .2em;
+}
+.menu1{
+    background-color: rgb(208, 220, 255);
+    border-radius: .5em;
+    color: blueviolet;
+}
+    .menu1 li:hover {
+        background-color: rgb(172, 172, 172);
+    }
+    .menu.menu1> :first-child {
+        border-top-left-radius: .5em;
+        border-top-right-radius: .5em;
+    }
+    .menu.menu1> :last-child {
+        border-bottom-left-radius: .5em;
+        border-bottom-right-radius: .5em;
+    }
+    .menu1 .active {
+        background-color: rgb(110, 188, 255);
+    }
+.openMenu2{
+    display: none;
+    width: 6vw;
+}
+.closeMenu2{
+    display: none;
+    width: 5vw;
+}
+.menu2{
+    display: block;
+    width: 100%;
+    top: 80px;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 11;
+    list-style: none;
+    color: white;
+    font-size: 2rem;
+}
+    .menu2 li:hover {
+        color: rgb(144, 203, 255);
     }
     .menu2 li{
         padding: 2em;
         text-align: center;
+    }
+    .menu2 .active {
+        color: rgb(144, 203, 255);
     }
 
 .main {
@@ -153,11 +156,11 @@ footer {
         display: block;
         width: 6vw;
     }
-
-    .menu{
-        /* display: none; */
+}
+@media only screen and (max-width: 350px) {
+    h1 {
+        font-size: 1.2rem;
     }
-
 }
 @media only screen and (min-width: 601px) {
     .openMenu2, .closeMenu2 {
