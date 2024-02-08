@@ -6,6 +6,11 @@ const caret = document.querySelector('.caret');
 const menu = document.querySelector('.menu');
 const options = document.querySelectorAll('.menu li');
 const selected = document.querySelector('.selected');
+const nextBtn = document.querySelector('.nextBtn');
+const prevBtn = document.querySelector('.prevBtn');
+const carouselImg = document.querySelectorAll('.carouselImg');
+
+
 
 const eventlisteners = function () {
     select.addEventListener('click', function () {
@@ -14,13 +19,9 @@ const eventlisteners = function () {
         caret.classList.toggle('caret-rotate');
     });
 
-    openMenu2.addEventListener('click', function () {
-        open2ndMenu();
-    });
+    openMenu2.addEventListener('click', open2ndMenu);
 
-    closeMenu2.addEventListener('click', function () {
-        close2ndMenu();
-    });
+    closeMenu2.addEventListener('click',close2ndMenu);
 
     options.forEach(option => {
         option.addEventListener('click', function () {
@@ -35,6 +36,10 @@ const eventlisteners = function () {
             close2ndMenu();
         });
     });
+
+    nextBtn.addEventListener('click', nextImg);
+
+    prevBtn.addEventListener('click', prevImg);
 
     window.addEventListener('resize', mediaJSQuery);
 }; eventlisteners();
@@ -67,7 +72,13 @@ function mediaJSQuery() {
     }
 }
 
+function nextImg() {
+    
+}
 
+function prevImg() {
+    
+}
 
 
 

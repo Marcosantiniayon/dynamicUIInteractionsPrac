@@ -31,7 +31,6 @@ header{
     justify-content: space-between;
     background-color: blueviolet;
     z-index: 11;
-    height:79.88px;
 }
 
 .dropdown{
@@ -93,6 +92,7 @@ li {
     .menu1 .active {
         background-color: rgb(110, 188, 255);
     }
+
 .openMenu2{
     display: none;
     width: 6vw;
@@ -101,10 +101,11 @@ li {
     display: none;
     width: 5vw;
 }
+
 .menu2{
     display: block;
     width: 100%;
-    top: 80px;
+    top: 20vw;
     left: 0;
     margin: 0;
     padding: 0;
@@ -129,6 +130,27 @@ li {
 .main {
     padding: 24px;
     flex: 1; 
+    display: flex;
+    flex-direction: column;
+}
+.carousel{
+    position: relative;
+    /* border: solid red; */
+    max-width: 900px;
+    max-height: 444px;
+    width: 90vw;
+    height: 45vw;
+    align-self: center;
+    overflow: hidden;
+}
+
+.carouselImg{
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 footer {
@@ -141,7 +163,7 @@ footer {
 
 @media only screen and (max-width: 600px) {
     h1 {
-        font-size: 6vw;
+        font-size: 5.5vw;
         width: 330px;
         white-space: nowrap;
     }
