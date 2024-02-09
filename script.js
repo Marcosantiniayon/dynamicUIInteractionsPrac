@@ -8,8 +8,7 @@ const options = document.querySelectorAll('.menu li');
 const selected = document.querySelector('.selected');
 const nextBtn = document.querySelector('.nextBtn');
 const prevBtn = document.querySelector('.prevBtn');
-const carouselImg = document.querySelectorAll('.carouselImg');
-
+const carousel = document.querySelectorAll('.carouselImg');
 
 
 const eventlisteners = function () {
@@ -37,13 +36,49 @@ const eventlisteners = function () {
         });
     });
 
-    nextBtn.addEventListener('click', nextImg);
+    nextBtn.addEventListener('click', carouselControl.nextImg);
 
-    prevBtn.addEventListener('click', prevImg);
+    prevBtn.addEventListener('click', carouselControl.prevImg);
 
     window.addEventListener('resize', mediaJSQuery);
-}; eventlisteners();
 
+};
+
+const carouselControl = (function () {
+    let currentIndex = 0;
+
+    function showImg() {
+        carousel.forEach((img, i) => {
+            if (i !== currentIndex) {
+                img.classList.remove('activeImg');
+            } else {
+                img.classList.add('activeImg');
+            }
+        });
+    }
+
+    function nextImg() {
+        console.log('next clicked, ' + currentIndex + "+ 1");
+        currentIndex = currentIndex + 1;
+        if (currentIndex >= carousel.length) {
+            currentIndex = 0; // Reset to first img when exceeding the maximum index
+        }
+        console.log('final index is ' + currentIndex);
+        showImg();
+    }
+
+    function prevImg() {
+        console.log('prev clicked, ' + currentIndex + "- 1")
+        currentIndex = currentIndex - 1;
+        if (currentIndex < 0) {
+            currentIndex = carousel.length - 1; // Reset to last img when index goes negative
+        }
+        console.log('final index is ' + currentIndex);
+        showImg();
+    }
+
+    return { nextImg, prevImg };
+})();
 
 function open2ndMenu() {
     openMenu2.style.display = 'none';
@@ -72,13 +107,8 @@ function mediaJSQuery() {
     }
 }
 
-function nextImg() {
-    
-}
+eventlisteners();
 
-function prevImg() {
-    
-}
 
 
 

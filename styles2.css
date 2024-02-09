@@ -145,12 +145,17 @@ li {
 }
 
 .carouselImg{
+    display: none;
     width: 100%;
     height: auto;
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.activeImg{
+    display: block;
 }
 
 footer {
