@@ -16,6 +16,7 @@ const navigationBars = document.querySelectorAll('.bar');
 
 const carouselControl = (function () {
     let currentIndex = 0;
+    let slideshowTimeout;
     showImg();
 
     function barImg(index) {
@@ -31,7 +32,9 @@ const carouselControl = (function () {
                 img.classList.add('activeImg');
             }
         });
-        setTimeout(nextImg, 5000); // Change image every 5 seconds
+        
+        clearTimeout(slideshowTimeout); // Clear the previous timeout (useful so it does not overide manual slide change)
+        slideshowTimeout = setTimeout(nextImg, 5000); // Change image every 5 seconds
     }
 
     function nextImg() {
