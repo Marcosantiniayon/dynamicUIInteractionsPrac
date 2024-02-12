@@ -157,7 +157,63 @@ li {
 .activeImg{
     display: block;
 }
+.arrows{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    justify-content: space-between;
+    width: 100%;
+    cursor: pointer;
+}
+.arrowP{
+    margin: 26px;
+}
+.arrow {
+    border: solid rgb(206, 206, 206);
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 10px;
+}
+.arrow:hover{
+    border: solid rgb(80, 80, 80);
+    border-width: 0 6px 6px 0;
+    display: inline-block;
+    padding: 10px;
+}
+    .right {
+        transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+    }
 
+    .left {
+        transform: rotate(135deg);
+        -webkit-transform: rotate(135deg);
+    }
+.navigationBars {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    cursor: pointer;
+    gap: 12px;
+    width: 150px;
+    height: 20px;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.bar {
+    width: 40px;
+    height: 5px;
+    background-color: rgb(206, 206, 206);
+    margin: 5px 0;
+}
+.bar:hover{
+    border: solid rgb(80, 80, 80);
+}
+.activeBar{
+        border: solid rgb(80, 80, 80);
+}
 footer {
     padding: 5px;
     bottom: 0;

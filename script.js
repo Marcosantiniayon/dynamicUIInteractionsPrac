@@ -8,10 +8,61 @@ const options = document.querySelectorAll('.menu li');
 const selected = document.querySelector('.selected');
 const nextBtn = document.querySelector('.nextBtn');
 const prevBtn = document.querySelector('.prevBtn');
+const leftArrow = document.querySelector('.arrow.left');
+const rightArrow = document.querySelector('.arrow.right');
 const carousel = document.querySelectorAll('.carouselImg');
+const navigationBars = document.querySelectorAll('.bar');
 
 
-const eventlisteners = function () {
+const carouselControl = (function () {
+    let currentIndex = 0;
+
+    function barImg(index) {
+        currentIndex = index;
+        showImg();
+    }
+
+    function showImg() {
+        carousel.forEach((img, i) => {
+            if (i !== currentIndex) {
+                img.classList.remove('activeImg');
+            } else {
+                img.classList.add('activeImg');
+            }
+        });
+    }
+
+    function nextImg() {
+        currentIndex = currentIndex + 1;
+        if (currentIndex >= carousel.length) {
+            currentIndex = 0; // Reset to first img when exceeding the maximum index
+        }
+        changeBar(currentIndex);
+    }
+
+    function prevImg() {
+        currentIndex = currentIndex - 1;
+        if (currentIndex < 0) {
+            currentIndex = carousel.length - 1; // Reset to last img when index goes negative
+        }
+        changeBar(currentIndex);
+    }
+
+    function changeBar(currentIndex) {
+        navigationBars.forEach((bar, index) => {
+            if (currentIndex === index) {
+                bar.classList.add('activeBar');
+            } else {
+                bar.classList.remove('activeBar');
+            }
+        });
+        showImg();
+    };
+
+    return { barImg, nextImg, prevImg, changeBar };
+})();
+
+const eventlisteners = (function () {
     select.addEventListener('click', function () {
         console.log('select clicked');
         menu.classList.toggle('menu-open');
@@ -36,48 +87,21 @@ const eventlisteners = function () {
         });
     });
 
-    nextBtn.addEventListener('click', carouselControl.nextImg);
+    navigationBars.forEach((bar, index) => {
+        bar.addEventListener('click', function () {
+            // change index to selected bar
+            carouselControl.barImg(index);
+            console.log("Clicked on bar " + (index + 1));
+            carouselControl.changeBar(index);
+        })
+    });
 
-    prevBtn.addEventListener('click', carouselControl.prevImg);
+    rightArrow.addEventListener('click', carouselControl.nextImg);
+
+    leftArrow.addEventListener('click', carouselControl.prevImg);
 
     window.addEventListener('resize', mediaJSQuery);
 
-};
-
-const carouselControl = (function () {
-    let currentIndex = 0;
-
-    function showImg() {
-        carousel.forEach((img, i) => {
-            if (i !== currentIndex) {
-                img.classList.remove('activeImg');
-            } else {
-                img.classList.add('activeImg');
-            }
-        });
-    }
-
-    function nextImg() {
-        console.log('next clicked, ' + currentIndex + "+ 1");
-        currentIndex = currentIndex + 1;
-        if (currentIndex >= carousel.length) {
-            currentIndex = 0; // Reset to first img when exceeding the maximum index
-        }
-        console.log('final index is ' + currentIndex);
-        showImg();
-    }
-
-    function prevImg() {
-        console.log('prev clicked, ' + currentIndex + "- 1")
-        currentIndex = currentIndex - 1;
-        if (currentIndex < 0) {
-            currentIndex = carousel.length - 1; // Reset to last img when index goes negative
-        }
-        console.log('final index is ' + currentIndex);
-        showImg();
-    }
-
-    return { nextImg, prevImg };
 })();
 
 function open2ndMenu() {
@@ -107,7 +131,6 @@ function mediaJSQuery() {
     }
 }
 
-eventlisteners();
 
 
 
