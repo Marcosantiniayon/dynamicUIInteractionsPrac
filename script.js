@@ -16,6 +16,7 @@ const navigationBars = document.querySelectorAll('.bar');
 
 const carouselControl = (function () {
     let currentIndex = 0;
+    showImg();
 
     function barImg(index) {
         currentIndex = index;
@@ -30,6 +31,7 @@ const carouselControl = (function () {
                 img.classList.add('activeImg');
             }
         });
+        setTimeout(nextImg, 5000); // Change image every 5 seconds
     }
 
     function nextImg() {
